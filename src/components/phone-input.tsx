@@ -16,9 +16,9 @@ export default function PhoneNumberInput() {
   useEffect(() => {
     //   fetch user's country code based on IP
     axios
-      .get("http://ip-api.com/json")
+      .get(`https://ipinfo.io/json?token=${process.env.IPINFO_TOKEN}`)
       .then((response) => {
-        const country = response.data.countryCode;
+        const country = response.data.country;
         setCountryCode(country);
       })
       .catch((error) => {
