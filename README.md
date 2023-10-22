@@ -14,5 +14,5 @@ Weekend sunday morning project, im tired having to manually saving phone number 
 
 ## TODO
 
-[ ] Toast messages for error validation
-[ ] Custom message.
+- [ ] Toast messages for error validation
+- [ ] Custom message.
