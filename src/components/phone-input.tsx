@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import { useRouter } from "next/router";
 import axios from "axios";
 import { parsePhoneNumber, type CountryCode } from "libphonenumber-js/min";
 
@@ -15,18 +14,16 @@ export default function PhoneNumberInput() {
   //   const [message, setMessage] = useState("");
 
   useEffect(() => {
-    return () => {
-      //   fetch user's country code based on IP
-      axios
-        .get("http://ip-api.com/json")
-        .then((response) => {
-          const country = response.data.countryCode;
-          setCountryCode(country);
-        })
-        .catch((error) => {
-          console.log("Error fetching country code : ", error);
-        });
-    };
+    //   fetch user's country code based on IP
+    axios
+      .get("http://ip-api.com/json")
+      .then((response) => {
+        const country = response.data.countryCode;
+        setCountryCode(country);
+      })
+      .catch((error) => {
+        console.log("Error fetching country code : ", error);
+      });
   }, []);
 
   function handleSubmit() {
